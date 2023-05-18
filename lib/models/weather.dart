@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Weather {
   String description;
   String conditions;
@@ -96,6 +98,34 @@ class Weather {
       return "assets/images/wind.png";
     } else {
       return "assets/images/clear-day.png";
+    }
+  }
+
+  Color getColor() {
+    if (conditionStat == "partly-cloudy-night") {
+      return Colors.blueGrey;
+    } else if (conditionStat == "clear-night") {
+      return Colors.indigo.shade900;
+    } else if (conditionStat == "partly-cloudy-day") {
+      return Colors.blueAccent;
+    } else if (conditionStat == "clear-day") {
+      return Colors.orange;
+    } else if (conditionStat == "snow" ||
+        conditionStat == "snow-showers-day" ||
+        conditionStat == "showers-day") {
+      return Colors.lightBlueAccent;
+    } else if (conditionStat == "snow-showers-night" ||
+        conditionStat == "showers-night") {
+      return Colors.indigoAccent;
+    } else if (conditionStat == "thunder-rain" || conditionStat == "rain") {
+      return Color.fromARGB(255, 8, 97, 170);
+    } else if (conditionStat == "thunder-showers-day" ||
+        conditionStat == "thunder-showers-night") {
+      return Color.fromARGB(255, 20, 50, 75);
+    } else if (conditionStat == "fog" || conditionStat == "wind") {
+      return Color.fromARGB(255, 42, 106, 255);
+    } else {
+      return Colors.blue;
     }
   }
 }
