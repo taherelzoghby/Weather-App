@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:weather_ap/controllers/weatherControl.dart';
 import 'package:weather_ap/views/screens/homePage.dart';
@@ -6,6 +7,10 @@ import 'package:weather_ap/views/screens/homePage.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(
     ChangeNotifierProvider<controlWeather>(
       create: (_) => controlWeather(),
